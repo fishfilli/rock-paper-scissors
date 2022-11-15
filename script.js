@@ -10,6 +10,14 @@ function getPlayerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
-    let playerSelection = playerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
+    console.log(playerSelection);
+    console.log(computerSelection);
+    return "You lose! Paper beats rock.";
+}
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        
+    }
 }
