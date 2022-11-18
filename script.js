@@ -11,13 +11,19 @@ function getPlayerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    console.log(playerSelection);
-    console.log(computerSelection);
-    return "You lose! Paper beats rock.";
+    if (playerSelection === computerSelection) {
+        return `${playerSelection} against ${computerSelection}. It's a draw.`;
+    } else if (((playerSelection === "rock") && (computerSelection === "scissors")) || 
+                ((playerSelection === "paper") && (computerSelection === "rock")) ||
+                ((playerSelection === "scissors") && (computerSelection === "paper"))) {
+        return `${playerSelection} against ${computerSelection}. You win.`;
+    } else {
+        return `${playerSelection} against ${computerSelection}. You lose.`;
+    }
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        
+
     }
 }
