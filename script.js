@@ -10,7 +10,7 @@ function getPlayerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+    console.log("start of playround");
     if (playerSelection === computerSelection) {
         return `${playerSelection} against ${computerSelection}. It's a draw.`;
     } else if (((playerSelection === "rock") && (computerSelection === "scissors")) || 
@@ -27,3 +27,22 @@ function game() {
 
     }
 }
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', () => {
+    let playerChoice = 'rock';
+    playRound(playerChoice, getComputerChoice());
+});
+
+paper.addEventListener('click', () => {
+    let playerChoice = 'paper';
+    playRound(playerChoice, getComputerChoice());
+});
+
+scissors.addEventListener('click', () => {
+    let playerChoice = 'scissors';
+    playRound(playerChoice, getComputerChoice());
+});
