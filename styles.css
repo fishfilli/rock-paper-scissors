@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(98, 82, 82);
+}
+
+button {
+    padding: 20px;
+    background-color:rgb(98, 82, 82);
+    border-color: white;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#scoreBoard {
+    display: flex;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px;
+}
