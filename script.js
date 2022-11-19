@@ -4,7 +4,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    console.log("start of playround");
     if (playerSelection === computerSelection) {
         announcement.textContent = `${playerSelection} against ${computerSelection}. It's a draw.`;
     } else if (((playerSelection === "rock") && (computerSelection === "scissors")) || 
@@ -20,6 +19,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function checkWinner() {
+    if (playerScore === 5) {
+        announcement.textContent = 'YOU ARE VICTORIOUS!';
+        body.removeChild(buttonContainer);
+    } else if (computerScore === 5) {
+        announcement.textContent = 'YOU SUFFER DEFEAT!';
+        body.removeChild(buttonContainer);
+    }
+}
+const body = document.querySelector('body');
+const buttonContainer = document.querySelector('#button-container');
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
@@ -27,16 +37,19 @@ const scissors = document.querySelector('#scissors');
 rock.addEventListener('click', () => {
     let playerChoice = 'rock';
     playRound(playerChoice, getComputerChoice());
+    checkWinner();
 });
 
 paper.addEventListener('click', () => {
     let playerChoice = 'paper';
     playRound(playerChoice, getComputerChoice());
+    checkWinner();
 });
 
 scissors.addEventListener('click', () => {
     let playerChoice = 'scissors';
     playRound(playerChoice, getComputerChoice());
+    checkWinner();
 });
 
 const playerScoreCard = document.querySelector('#playerScoreCard');
